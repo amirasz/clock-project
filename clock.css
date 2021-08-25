@@ -1,0 +1,155 @@
+* {
+	margin:0;
+	padding:0;
+	box-sizing:border-box;
+}
+
+body {
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	min-height:100vh;
+	background:#282828;
+	background:#07141b;
+}
+
+body.light {
+	background:#d1dae3;
+}
+
+.clock {
+	display:flex;
+	width:350px;
+	height:350px;
+	justify-content:center;
+	align-items:center;
+	background: url(1.jpg);
+	background-size:cover;
+	border:4px;
+	border-radius:50%;
+	box-shadow:-4px -4px 10px rgba(67, 67, 67, 0.5),
+	inset 4px 4px 10px rgba(0, 0, 0, 0.5),
+	inset -4px -4px 10px rgba(67, 67, 67, 0.3),
+	4px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.clock:before {
+	content:"";
+	position:absolute;
+	width:15px;
+	height:15px;
+	background:#747474;
+	border-radius:50%;
+	z-index:999;
+}
+
+body.light .clock {
+	box-shadow:0em -1.2em 1.2em rgba(255, 255, 255, 0.3),
+	inset 1em 1em -1em rgba(255, 255, 255, 0.3),
+	0em -1.2em -1.2em rgba(0, 0, 0, 0.5),
+	inset 1em -1em 1em rgba(0, 0, 0, 0.1);
+}
+
+.clock:hover {
+	cursor:pointer;
+}
+
+body.light .clock:before {
+	background:#1a74be;
+}
+
+.clock .hour, .clock .min, .clock .sec {
+	position:absolute;
+}
+
+.clock .hour, .hr {
+	width:160px;
+	height:160px;
+}
+
+.clock .min, .mn {
+	width:190px;
+	height:190px;
+}
+
+.clock .sec, .sc {
+	width:230px;
+	height:230px;
+}
+
+.hr, .mn, .sc {
+	display:flex;
+	justify-content:center;
+	position:absolute;
+	border-radius:50%;
+}
+
+.hr:before {
+	content:"";
+	position:absolute;
+	width:8px;
+	height:80px;
+	background:#ffb510;
+	z-index:9;
+	border-radius:6px 6px 0 0;
+}
+
+.mn:before {
+	content:"";
+	position:absolute;
+	width:4px;
+	height:90px;
+	background:#8b8b8b;
+	z-index:10;
+	border-radius:6px 6px 0 0;
+}
+
+.sc:before {
+	content:"";
+	position:absolute;
+	width:2px;
+	height:150px;
+	background:#e5e5e5;
+	z-index:11;
+	border-radius:6px 6px 0 0;
+}
+
+body.light .mn:before {
+	background:#091921;
+}
+
+.toggleClass {
+	position:absolute;
+	top:35px;
+	right:150px;
+	width:20px;
+	margin:2px;
+	height:20px;
+	font-size:18px;
+	border-radius:50%;
+	background:#d1dae3;
+	color:#d1dae3;
+	font-family:'Quicksand'
+	sans-serif;
+	cursor:pointer;
+	display:flex;
+	align-items:center;
+}
+
+.toggleClass:before {
+	position:absolute;
+	content:'Light Mode';
+	white-space:nowrap;
+	left:25px;
+}
+
+body.light .toggleClass {
+	background:#091921;
+	color:#091921;
+	content:'Dark Mode';
+}
+
+body.light .toggleClass:before {
+	content:'Dark Mode';
+	white-space:nowrap;
+}
